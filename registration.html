@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration Form</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:url("dark.jpg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+}
+
+.SigninBox{
+    background:rgba(44,66,80,0.8);
+    width:90%;
+    max-width:400px;
+    padding:30px;
+    border-radius:15px;
+    text-align:center;
+}
+
+h1,h2{
+    color:white;
+    margin-bottom:15px;
+}
+
+input,
+select{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    background:transparent;
+    border:none;
+    border-bottom:1px solid white;
+    color:white;
+    font-size:16px;
+    outline:none;
+    text-align:center;
+}
+
+select option{
+    color:black;
+}
+
+::placeholder{
+    color:white;
+    opacity:0.7;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:25px;
+    background:white;
+    color:black;
+    font-size:18px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:cyan;
+}
+
+footer{
+    margin-top:20px;
+    color:white;
+    text-align:center;
+    font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="SigninBox">
+    <form id="registerForm">
+    <h1>REGISTRATION</h1>
+
+    <input type="text" id="name" placeholder="Full Name" required>
+
+    <input type="email" id="email" placeholder="Email Address" required>
+
+    <input type="tel" id="phone" placeholder="Phone Number" required>
+
+    <h2>Select Your Program</h2>
+
+    <select id="program" required>
+        <option value="">Choose Program</option>
+        <option value="WAEC">WAEC</option>
+        <option value="JAMB">JAMB</option>
+        <option value="JUPEB">JUPEB</option>
+        <option value="Pre-medical">Pre-medical</option>
+    </select>
+
+    <br><br>
+
+    <button type="submit">REGISTER</button>
+</form>
+</div>
+
+<footer>
+    <p>GOODNIE Web Design © 2026</p>
+</footer>
+
+</body>
+
+<script>
+document.getElementById("registerForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let phone = document.getElementById("phone").value;
+    let program = document.getElementById("program").value;
+
+    let message =
+`I want to register for the tutorial
+
+Full Name: ${name}
+Email: ${email}
+Phone Number: ${phone}
+Program: ${program}`;
+
+    let whatsappURL =
+`https://wa.me/2348062630451?text=${encodeURIComponent(message)}`;
+
+    window.open(whatsappURL, "_blank");
+});
+</script>
+</html>
